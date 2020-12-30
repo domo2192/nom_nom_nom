@@ -20,6 +20,7 @@ class PantryTest < Minitest::Test
 
   def test_it_exists
     assert_instance_of Pantry, @pantry
+    assert_equal ({}), @pantry.stock 
   end
 
   def test_stock_pantry_starts_as_empty_hash
@@ -37,5 +38,5 @@ class PantryTest < Minitest::Test
     @pantry.restock(@ingredient2, 7)
     assert_equal 15, @pantry.stock_check(@ingredient1)
     assert_equal 7, @pantry.stock_check(@ingredient2)
-  end 
+  end
 end

@@ -13,9 +13,9 @@ class Recipe
   end
 
   def total_calories
-    #require'pry';binding.pry
-     @ingredients_required.keys.sum do |ingredient|
-       ingredient.calories * @ingredients_required[ingredient]
+     @ingredients_required.sum do |ingredient, amount|
+       ingredient.calories * amount
+
      end
   end
 end
